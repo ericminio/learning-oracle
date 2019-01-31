@@ -1,0 +1,9 @@
+language: minimal
+services:
+  - docker
+before_install:
+  - $TRAVIS_BUILD_DIR/docker_pull_oracle.sh
+  - $TRAVIS_BUILD_DIR/start_oracle_as_daemon.sh
+  - sleep 33
+script:
+  - $TRAVIS_BUILD_DIR/execute.sh
