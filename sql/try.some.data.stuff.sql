@@ -1,7 +1,3 @@
-select CURRENT_DATE from dual;
-
-ALTER DATABASE OPEN;
-
 create table event(
     id number(10) not null,
     label varchar2(50) not null
