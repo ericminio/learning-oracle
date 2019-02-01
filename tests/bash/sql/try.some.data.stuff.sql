@@ -1,8 +1,10 @@
+drop table event;
 create table event(
     id number(10) not null,
     label varchar2(50) not null
 );
 
+drop sequence event_id;
 create sequence event_id;
 
 insert into event(id, label) values(event_id.nextval, 'new year');

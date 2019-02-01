@@ -2,8 +2,10 @@ language: minimal
 services:
   - docker
 before_install:
-  - $TRAVIS_BUILD_DIR/support/docker_pull_oracle.sh
-  - $TRAVIS_BUILD_DIR/support/start_oracle_as_daemon.sh
+  - $TRAVIS_BUILD_DIR/tests/support/docker_pull_oracle.sh
+  - $TRAVIS_BUILD_DIR/tests/support/start_oracle_as_daemon.sh
   - sleep 60
+  - $TRAVIS_BUILD_DIR/tests/python/install_requirements.sh
 script:
-  - $TRAVIS_BUILD_DIR/tests/instance_is_available.sh
+  - $TRAVIS_BUILD_DIR/tests/bash/test_instance_is_ready.sh
+  - $TRAVIS_BUILD_DIR/tests/python/test_instance_is_ready.sh
