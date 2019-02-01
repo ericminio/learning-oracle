@@ -4,6 +4,6 @@ services:
 before_install:
   - $TRAVIS_BUILD_DIR/support/docker_pull_oracle.sh
   - $TRAVIS_BUILD_DIR/support/start_oracle_as_daemon.sh
-  - sleep 45
+  - sleep 60
 script:
   - $TRAVIS_BUILD_DIR/tests/instance_is_available.sh
