@@ -1,8 +1,8 @@
 workflow "New workflow" {
   on = "push"
-  resolves = ["/support/docker_pull_oracle.sh"]
+  resolves = ["pull oracle"]
 }
 
-action "/support/docker_pull_oracle.sh" {
+action "pull oracle" {
   uses = "./support/docker_pull_oracle.sh"
 }
